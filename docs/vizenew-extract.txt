@@ -1,0 +1,66 @@
+﻿  1| XX(X), XX-XXXX(X), XX-XX20262026XX(X), 20XX, XX ÔÇô XXXX(X), 20XX, XX ÔÇô XXISSN: 1307-4474ISSN: 1307-4474
+  2| XX(X), XX-XX
+  3| XX(X), XX-XX
+  4| 2026
+  5| 2026
+  6| XX(X), 20XX, XX ÔÇô XX
+  7| XX(X), 20XX, XX ÔÇô XX
+  8| ISSN: 1307-4474
+  9| ISSN: 1307-4474
+ 10| YKS Deneme Performans ve Geli┼şim Takip Sistemi
+ 11| Anahtar S├Âzc├╝kler
+ 12| ├ûzet
+ 13| YKS Haz─▒rl─▒k
+ 14| Bu ├ğal─▒┼şma, YKS (Temel Yeterlilik Testi ve Alan Yeterlilik Testleri) haz─▒rl─▒k s├╝recindeki ├Â─şrencilerin akademik verilerini sistematik bir ┼şekilde takip etmelerini ve analiz etmelerini sa─şlayan masa├╝st├╝ tabanl─▒ bir yaz─▒l─▒m─▒n geli┼ştirilme s├╝recini ele almaktad─▒r. ├çal─▒┼şman─▒n amac─▒, manuel net hesaplama hatalar─▒n─▒ ortadan kald─▒rmak ve ├Â─şrencinin geli┼şim trendini g├Ârselle┼ştirerek veri odakl─▒ bir ├ğal─▒┼şma stratejisi olu┼şturmas─▒na yard─▒mc─▒ olmakt─▒r. Y├Ântem olarak, nesneye dayal─▒ programlama (OOP) prensipleri ve MVC (Model-View-Controller) mimari deseni benimsenmi┼ştir. Yaz─▒l─▒m─▒n aray├╝z├╝ JavaFX k├╝t├╝phanesi ile tasarlanm─▒┼ş, veri kal─▒c─▒l─▒─ş─▒ i├ğin nesne serile┼ştirme (Serialization) teknikleri kullan─▒lm─▒┼şt─▒r. Ara┼şt─▒rma sonucunda, ├Â─şrencilerin ders bazl─▒ eksiklerini daha ┼şeffaf bir ┼şekilde g├Ârebildikleri ve zaman y├Ânetimini optimize edebildikleri bir dijital ekosistem olu┼şturulmu┼ştur. Bu sistem, geleneksel k├ó─ş─▒t-kalem y├Ântemine g├Âre daha h─▒zl─▒ analiz ve hata pay─▒ d├╝┼ş├╝k puan hesaplama imk├ón─▒ sunmas─▒ bak─▒m─▒ndan ├Âzg├╝n bir de─şer ta┼ş─▒maktad─▒r.
+ 15| Veri G├Ârselle┼ştirme
+ 16| JavaFX
+ 17| Performans Takibi
+ 18| Yaz─▒l─▒m Geli┼ştirme
+ 19| Makale Hakk─▒nda
+ 20| G├Ânderim Tarihi
+ 21| 03 Nisan 2026
+ 22| Kabul Tarihi
+ 23| XX Ay 20XX
+ 24| Yay─▒n Tarihi
+ 25| XX Ay 20XX
+ 26| Makale T├╝r├╝
+ 27| Ara┼şt─▒rma Makalesi
+ 28| Geni┼şletilmi┼ş ├ûzet
+ 29| Projenin Teknik Vizyonu ve Yenilik├ği Yakla┼ş─▒m─▒
+ 30| Y├╝ksek├Â─şretim Kurumlar─▒ S─▒nav─▒ (YKS) haz─▒rl─▒k s├╝reci, T├╝rkiyeÔÇÖdeki milyonlarca ├Â─şrenci i├ğin sadece bir akademik test de─şil, ayn─▒ zamanda karma┼ş─▒k bir veri y├Ânetimi operasyonudur.┬á"Alperen Akademi: YKS Performans ve Geli┼şim Takip Sistemi", bu operasyonel s├╝reci tamamen dijitalle┼ştirerek ├Â─şrencinin ├╝zerindeki bili┼şsel y├╝k├╝ azaltmay─▒ ve veri odakl─▒ karar verme mekanizmas─▒n─▒ g├╝├ğlendirmeyi hedefleyen kapsaml─▒ bir yaz─▒l─▒m projesidir.┬áGeleneksel y├Ântemlerin aksine, bu ├ğal─▒┼şma masa├╝st├╝ platformun i┼şlem g├╝c├╝n├╝ ve JavaFX k├╝t├╝phanesinin g├Ârsel kabiliyetlerini birle┼ştirerek ├Â─şrenciye ki┼şiselle┼ştirilmi┼ş bir akademik asistan sunmaktad─▒r.
+ 31| Sistem Bile┼şenleri ve Fonksiyonel ├ûzellikler
+ 32| Proje, temel deneme takibi i┼şlevlerinin ├Âtesine ge├ğerek, bir ├Â─şrencinin s─▒nav sabah─▒na kadar ihtiya├ğ duyabilece─şi t├╝m dijital ara├ğlar─▒ tek bir aray├╝zde toplamaktad─▒r:
+ 33| Dinamik YKS Geri Say─▒m Sayac─▒:┬á├û─şrencinin zaman alg─▒s─▒n─▒ diri tutmak ve ├ğal─▒┼şma plan─▒n─▒ kalan s├╝reye g├Âre optimize etmesini sa─şlamak amac─▒yla sisteme entegre edilen saya├ğ, Java┬áThread┬áyap─▒s─▒ kullan─▒larak anl─▒k g├╝ncellenen bir mod├╝l olarak tasarlanm─▒┼şt─▒r. Bu mod├╝l, s─▒nav tarihine olan uzakl─▒─ş─▒ g├╝n, saat ve dakika baz─▒nda sunarak stratejik planlamaya katk─▒ sa─şlar.
+ 34| T├╝rkiye Geneli Deneme S─▒nav─▒ Takvimi:┬áHaz─▒rl─▒k s├╝recinin en kritik a┼şamalar─▒ndan biri olan geni┼ş kat─▒l─▒ml─▒ deneme s─▒navlar─▒ (T├╝rkiye Geneli), sistem i├ğerisinde merkezi bir takvim ├╝zerinden takip edilebilmektedir. Bu takvim, yay─▒nevlerinin ve kurumlar─▒n s─▒nav tarihlerini ├Ânceden ├Â─şrenciye bildirerek, ├Â─şrencinin d─▒┼ş de─şerlendirme s─▒navlar─▒na kat─▒l─▒m─▒n─▒ maksimize etmeyi hedefler.
+ 35| Ders ve Konu Bazl─▒ Haftal─▒k Soru Takibi:┬áSistem, sadece deneme sonu├ğlar─▒n─▒ de─şil, g├╝nl├╝k ├ğal─▒┼şma rutinini de kay─▒t alt─▒na al─▒r. ├û─şrenci, ├ğ├Âzd├╝─ş├╝ soru say─▒lar─▒n─▒ ders ders ve konu konu (├ûrn: Matematik - T├╝rev, T├╝rk├ğe - Paragraf) sisteme girerek, hangi konuya ne kadar mesai harcad─▒─ş─▒n─▒ say─▒sal verilerle g├Ârebilmektedir. Bu veriler, ilerleyen a┼şamalarda geli┼şim grafiklerine (LineChart) kaynakl─▒k etmektedir.
+ 36| Entegre G├╝ncel Haber Ak─▒┼ş─▒:┬á├ûSYM ve Y├ûK taraf─▒ndan yap─▒lan m├╝fredat de─şi┼şiklikleri, baraj puan─▒ g├╝ncellemeleri veya s─▒nav takvimi duyurular─▒ gibi kritik haberler, uygulama i├ğerisindeki canl─▒ haber listesi mod├╝l├╝yle kullan─▒c─▒ya sunulur. Bu sayede ├Â─şrenci, bilgi kirlili─şinden uzak durarak sadece resmi ve g├╝ncel haberlere odaklanabilmektedir.
+ 37| Akademik Hedef ve Net Kar┼ş─▒la┼şt─▒rma Motoru:┬áYaz─▒l─▒m─▒n en ├Âzg├╝n mod├╝llerinden biri olan bu k─▒s─▒m, ├Â─şrencinin hedefledi─şi ├╝niversite b├Âl├╝mlerinin (├ûrn: Bilgisayar M├╝hendisli─şi) ge├ğmi┼ş y─▒llardaki taban s─▒ralamalar─▒n─▒ ve gereken ortalama netlerini veri taban─▒nda tutar. ├û─şrencinin son 5 veya 10 denemedeki ortalamas─▒yla bu hedefleri anl─▒k olarak k─▒yaslar ve "Hedefe ula┼şmak i├ğin Matematik netini +5 art─▒rmal─▒s─▒n" gibi somut y├Ânlendirmeler yapar.
+ 38| Veri Y├Ânetimi ve G├╝venlik Altyap─▒s─▒
+ 39| Sistem, ├Â─şrencinin en de─şerli varl─▒─ş─▒ olan "geli┼şim verisini" korumak i├ğin yerel depolama ve nesne y├Ânelimli veri modellerini kullan─▒r.┬áJavaÔÇÖn─▒n┬áSerializable┬áyap─▒s─▒ sayesinde, internet ba─şlant─▒s─▒ kesilse dahi t├╝m ge├ğmi┼ş denemeler, soru say─▒lar─▒ ve hedef analizleri ┼şifrelenmi┼ş bir yerel dosyada (Local Storage) saklan─▒r.┬áMVC (Model-View-Controller) mimarisi, bu verilerin aray├╝zden (View) ba─ş─▒ms─▒z bir ┼şekilde i┼ş mant─▒─ş─▒ (Controller) katman─▒nda hatas─▒z hesaplanmas─▒n─▒ garantiler.┬áAlgoritmik hesaplama motoru, "4 yanl─▒┼ş 1 do─şru" kural─▒n─▒ her ders i├ğin ayr─▒ ayr─▒ uygulayarak ├ûSYM katsay─▒lar─▒yla ├ğarpar ve ├Â─şrenciye en yak─▒n "tahmini puan" ├ğ─▒kt─▒s─▒n─▒ ├╝retir.
+ 40| Sonu├ğ ve Beklenen Akademik ├ç─▒kt─▒lar
+ 41| "Alperen Akademi", ├Â─şrencinin s─▒nav haz─▒rl─▒k s├╝recini bir "kara kutu" olmaktan ├ğ─▒kar─▒p ┼şeffaf, ├Âl├ğ├╝lebilir ve geli┼ştirilebilir bir s├╝rece d├Ân├╝┼şt├╝rmektedir. Sistemin sundu─şu haftal─▒k konu analizleri ve hedef net kar┼ş─▒la┼şt─▒rmalar─▒, ├Â─şrencinin yanl─▒┼ş ├ğal─▒┼şma al─▒┼şkanl─▒klar─▒n─▒ erkenden fark etmesini sa─şlar.┬áBu proje, sadece bir yaz─▒l─▒m geli┼ştirme ├ğal─▒┼şmas─▒ de─şil, ayn─▒ zamanda e─şitim teknolojileri alan─▒nda veri g├Ârselle┼ştirme ve performans analizinin ├Â─şrenci ba┼şar─▒s─▒ ├╝zerindeki etkisini inceleyen teknik bir d├Âk├╝mantasyondur. Gelecek versiyonlarda, yapay zeka destekli "eksik konu ├Âneri sistemi" eklenerek yaz─▒l─▒m─▒n e─şitim ko├ğlu─şu kapasitesinin art─▒r─▒lmas─▒ planlanmaktad─▒r.
+ 42| Giri┼ş
+ 43| Y├╝ksek├Â─şretim Kurumlar─▒ S─▒nav─▒ (YKS), adaylar─▒n akademik kariyerlerini ┼şekillendiren, ├ğok kapsaml─▒ bir m├╝fredat─▒ ve stratejik zaman y├Ânetimini gerektiren bir s├╝re├ğtir. Bu s├╝re├ğte ├Â─şrencilerin sadece ders ├ğal─▒┼şmalar─▒ yeterli olmamakta, girdikleri ├ğok say─▒daki deneme s─▒nav─▒n─▒n sonu├ğlar─▒n─▒ do─şru analiz ederek geli┼şimlerini takip etmeleri hayati ├Ânem ta┼ş─▒maktad─▒r. "YKS Deneme Performans ve Geli┼şim Takip Sistemi" projesi, bu ihtiyac─▒ dijital bir ekosistemde profesyonelce ├ğ├Âzmek amac─▒yla geli┼ştirilmi┼ştir.
+ 44| Projenin ├ûnemi ve Amac─▒
+ 45| Projenin temel amac─▒, ├Â─şrencilerin s─▒nav haz─▒rl─▒k s├╝recinde kar┼ş─▒la┼şt─▒klar─▒ veri karma┼şas─▒n─▒ minimize ederek, performans─▒ say─▒sal ve g├Ârsel verilere d├Ân├╝┼şt├╝rmektir. Manuel olarak yap─▒lan net hesaplamalar─▒ ve puan tahminleri, hem zaman kayb─▒na yol a├ğmakta hem de hata pay─▒n─▒ art─▒rmaktad─▒r. Bu ├ğal─▒┼şma; nesneye dayal─▒ programlama prensipleriyle (OOP) kurgulanan g├╝venilir bir backend yap─▒s─▒ ve JavaFX tabanl─▒ dinamik bir aray├╝z arac─▒l─▒─ş─▒yla, ├Â─şrencinin s─▒nav verilerini hatas─▒z bir ┼şekilde i┼şlemesini ve saklamas─▒n─▒ ama├ğlamaktad─▒r.
+ 46| Sistemin Sa─şlad─▒─ş─▒ Faydalar
+ 47| Geli┼ştirilen sistem, ├Â─şrenciye sadece bir puan tablosu sunmakla kalmaz; ayn─▒ zamanda ders bazl─▒ eksik analizi yapabilme imk├ón─▒ tan─▒r. JavaÔÇÖn─▒n Serializable aray├╝z├╝ kullan─▒larak olu┼şturulan veri kal─▒c─▒l─▒─ş─▒ katman─▒ sayesinde, kullan─▒c─▒ t├╝m ge├ğmi┼ş verilerine anl─▒k olarak eri┼şebilir. Bu durum, ├Â─şrencinin hangi d├Ânemlerde d├╝┼ş├╝┼ş ya┼şad─▒─ş─▒n─▒ veya hangi derslerde istikrarl─▒ oldu─şunu g├Ârerek ├ğal─▒┼şma plan─▒n─▒ "veri odakl─▒" bir ┼şekilde revize etmesine olanak sa─şlar. Ayr─▒ca, sistemin sundu─şu grafiksel raporlar, karma┼ş─▒k tablolar─▒n aksine bili┼şsel y├╝k├╝ azaltarak motivasyonel bir geri bildirim mekanizmas─▒ i┼şlevi g├Âr├╝r.
+ 48| Benzer Projelerden Fark─▒ ve ├ûzg├╝n De─şeri
+ 49| Piyasada bulunan mevcut deneme takip uygulamalar─▒ genellikle mobil tabanl─▒ olup, veri saklama g├╝venli─şi ve detayl─▒ grafiksel analiz kapasitesi bak─▒m─▒ndan s─▒n─▒rl─▒d─▒r. Ayr─▒ca bir├ğok uygulama, g├╝ncel katsay─▒ de─şi┼şimlerine veya ├Â─şrencinin ki┼şisel veri gizlili─şine (yerel depolama) tam uyum sa─şlamamaktad─▒r. Bu projenin benzerlerinden temel fark─▒, tamamen masa├╝st├╝ odakl─▒, h─▒zl─▒ ve y├╝ksek performansl─▒ bir kullan─▒c─▒ deneyimi sunmas─▒d─▒r. MVC (Model-View-Controller) mimarisi ile tasarlanan yaz─▒l─▒m, kullan─▒c─▒ya verilerini kendi yerel diskinde g├╝venle saklama ve internet ba─ş─▒ml─▒l─▒─ş─▒ olmadan derinlemesine analiz yapma imk├ón─▒ sunarak ├Âzg├╝n bir de─şer yaratmaktad─▒r. Proje, akademik bir disiplinle kurgulanan "4 yanl─▒┼ş 1 do─şru" ve katsay─▒ hesaplama algoritmalar─▒yla, piyasadaki     standart      hesaplay─▒c─▒lardan       daha       mod├╝ler     ve      geni┼şletilebilir      bir     yap─▒ya        sahiptir.
+ 50| Y├Ântem
+ 51| Bu b├Âl├╝mde, projenin geli┼ştirilme s├╝recinde benimsenen metodolojiler, kullan─▒lan yaz─▒l─▒m geli┼ştirme ara├ğlar─▒ ve sistemin temelini olu┼şturan teknik yakla┼ş─▒mlar detayland─▒r─▒lm─▒┼şt─▒r.
+ 52| Ara┼şt─▒rma Deseni ve Proje S├╝reci
+ 53| Ara┼şt─▒rma Deseni ve Proje Y├Ânetimi┬áYaz─▒l─▒m─▒n geli┼ştirilme s├╝recinde┬á"Yaz─▒l─▒m Geli┼ştirme Ya┼şam D├Âng├╝s├╝" (SDLC)┬áprensipleri do─şrultusunda mod├╝ler bir yakla┼ş─▒m benimsenmi┼ştir.┬áProje y├Ânetimi kapsam─▒nda, gereksinim analizi, sistem tasar─▒m─▒, kodlama ve test a┼şamalar─▒ sistematik bir s─▒ra ile takip edilmi┼ştir.┬áKarma┼ş─▒k veri yap─▒lar─▒n─▒n y├Ânetimi i├ğin yaz─▒l─▒m d├╝nyas─▒nda kabul g├Ârm├╝┼ş┬áMVC (Model-View-Controller)┬ámimari deseni kullan─▒lm─▒┼şt─▒r.┬áBu y├Ântemle, kullan─▒c─▒ aray├╝z├╝ (View), i┼ş mant─▒─ş─▒ (Controller) ve veri modelleri (Model) birbirinden ayr─▒┼şt─▒r─▒larak sistemin bak─▒m─▒ kolayla┼şt─▒r─▒lm─▒┼ş ve hata pay─▒ minimize edilmi┼ştir.
+ 54| Kullan─▒lan Teknolojiler ve Ara├ğlar
+ 55| Kullan─▒lan Yaz─▒l─▒m Teknolojileri ve Ara├ğlar┬áProjenin geli┼ştirilmesinde y├╝ksek performansl─▒ ve nesneye dayal─▒ (OOP) bir dil olan┬áJava (JDK 17+)┬átercih edilmi┼ştir.┬áAray├╝z tasar─▒m─▒ i├ğin modern ve esnek bir k├╝t├╝phane olan┬áJavaFX┬ákullan─▒l─▒rken, tasar─▒mlar─▒n g├Ârsel olarak kurgulanmas─▒nda┬áScene Builder┬áuygulamas─▒ndan yararlan─▒lm─▒┼şt─▒r. Verilerin grafiksel analizi i├ğin JavaFX'in yerle┼şik┬áCharts┬ák├╝t├╝phanesi entegre edilerek, net ve puan de─şi┼şimlerinin dinamik olarak g├Ârselle┼ştirilmesi sa─şlanm─▒┼şt─▒r. Geli┼ştirme ortam─▒ (IDE) olarak profesyonel kod y├Ânetimi ve hata ay─▒klama ara├ğlar─▒ sunan┬áIntelliJ IDEA / Eclipse┬áplatformlar─▒ndan faydalan─▒lm─▒┼şt─▒r.
+ 56| Veri Y├Ânetimi ve Hesaplama Yakla┼ş─▒m─▒
+ 57| Veri Y├Ânetimi ve Algoritmik Yakla┼ş─▒m┬áSistemin en kritik i┼şlevi olan veri kal─▒c─▒l─▒─ş─▒ (persistence) katman─▒nda, JavaÔÇÖn─▒n┬áSerializable┬áaray├╝z├╝ ve Dosya I/O ak─▒┼şlar─▒ kullan─▒lm─▒┼şt─▒r.┬áBu y├Ântemle, ├Â─şrenci verileri harici bir veri taban─▒ sunucusuna ihtiya├ğ duymadan, yerel disk ├╝zerinde g├╝venli ve h─▒zl─▒ bir ┼şekilde saklanmaktad─▒r.┬áNet hesaplama motorunda, ├ûSYM taraf─▒ndan belirlenen "4 yanl─▒┼ş─▒n 1 do─şruyu g├Ât├╝rmesi" kural─▒ temel al─▒narak hassas bir algoritma geli┼ştirilmi┼ştir.┬áPuan tahminleri ise alanyaz─▒nda yer alan g├╝ncel katsay─▒lar─▒n (Matematik, T├╝rk├ğe, Fen, Sosyal a─ş─▒rl─▒klar─▒) sisteme parametrik olarak tan─▒mlanmas─▒yla ger├ğekle┼ştirilmi┼ştir.
+ 58| Kaynaklar ve Standartlar
+ 59| Yararlan─▒lan Kaynaklar ve Standartlar┬áSistemin kullan─▒c─▒ deneyimi (UX) tasar─▒m─▒ kurgulan─▒rken┬áOracle JavaFX Documentation┬ástandartlar─▒ ve veri g├Ârselle┼ştirme ilkeleri baz al─▒nm─▒┼şt─▒r.┬áPuanlama ve ders a─ş─▒rl─▒klar─▒n─▒n do─şrulanmas─▒ a┼şamas─▒nda ise┬á├ûSYM G├╝ncel YKS K─▒lavuzu┬ábirincil kaynak olarak kullan─▒lm─▒┼şt─▒r. Bu referanslar, yaz─▒l─▒m─▒n akademik ve pratik ge├ğerlili─şini destekleyen en ├Ânemli dayanak noktalar─▒d─▒r.
+ 60| Kaynak├ğa / References
+ 61| Alperen, K. & Y─▒lmaz, A. (2026).┬áAlperen Akademi: YKS deneme performans ve geli┼şim takip sistemi proje d├Âk├╝mantasyonu.┬áBart─▒n ├£niversitesi, Bilgisayar Teknolojisi ve Bili┼şim Sistemleri.
+ 62| Oracle. (2024).┬áJavaFX documentation.┬áhttps://openjfx.io/┬áadresinden eri┼şildi.
+ 63| ├ûl├ğme, Se├ğme ve Yerle┼ştirme Merkezi [├ûSYM]. (2025).┬áY├╝ksek├Â─şretim kurumlar─▒ s─▒nav─▒ (YKS) k─▒lavuzu.┬áhttps://www.osym.gov.tr┬áadresinden eri┼şildi.
+ 64| <<
+ 65| <
+ 66| <

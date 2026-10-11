@@ -1,0 +1,4 @@
+--patch-module
+com.alperenakademi.yks=_
+--add-reads
+com.alperenakademi.yks=ALL-UNNAMED

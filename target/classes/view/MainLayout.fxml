@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.alperenakademi.yks.controller.MainController"
+            fx:id="rootPane"
+            styleClass="root-pane">
+    <center>
+        <StackPane>
+            <children>
+                <HBox fx:id="appContentContainer" styleClass="app-shell" visible="false" managed="false">
+                    <children>
+                        <VBox fx:id="sidebar" styleClass="app-sidebar" spacing="18">
+                            <children>
+                                <VBox spacing="4" styleClass="sidebar-brand">
+                                    <children>
+                                        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="sidebar-brand-row">
+                                            <children>
+                                                <Label text="AA" styleClass="sidebar-logo-badge"/>
+                                                <VBox spacing="3">
+                                                    <children>
+                                                        <Label fx:id="appTitleLabel" text="Alperen Akademi" styleClass="app-title sidebar-title"/>
+                                                        <Label fx:id="appSubtitleLabel" text="YKS Deneme Performans ve Gelişim Takip Sistemi" styleClass="app-subtitle sidebar-subtitle" wrapText="true"/>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox spacing="6" styleClass="sidebar-nav" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <ToggleButton fx:id="sidebarDashboardButton" text="⌂  Dashboard" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarExamButton" text="✎  Deneme Giriş" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarExamListButton" text="☷  Deneme Listesi" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarAnalysisButton" text="▣  Grafik ve Analiz" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarWeeklyButton" text="✓  Haftalık Soru Takibi" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarGoalButton" text="◎  Hedef" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarCalendarButton" text="▦  Takvim" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <ToggleButton fx:id="sidebarNewsButton" text="✦  Haberler" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                    </children>
+                                </VBox>
+                                <VBox spacing="10" styleClass="sidebar-footer">
+                                    <children>
+                                        <ToggleButton fx:id="sidebarSettingsButton" text="⚙  Ayarlar" maxWidth="Infinity" styleClass="sidebar-nav-item"/>
+                                        <Label fx:id="welcomeLabel" text="Hoş geldin" styleClass="welcome-label sidebar-welcome" wrapText="true"/>
+                                        <ToggleButton fx:id="logoutButton" text="⏻  Çıkış Yap" onAction="#onLogout" maxWidth="Infinity" styleClass="sidebar-nav-item sidebar-logout-btn"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <StackPane styleClass="main-content-frame app-main-shell" HBox.hgrow="ALWAYS">
+                            <children>
+                                <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="main-content-tabs">
+                    <tabs>
+                        <Tab fx:id="dashboardTab" text="Dashboard">
+                            <VBox spacing="22" styleClass="page-wrap content-page">
+                                <children>
+                                    <HBox alignment="CENTER">
+                                        <children>
+                                            <VBox fx:id="countdownCard" spacing="14" styleClass="card card-highlight countdown-safe dashboard-hero" maxWidth="980">
+                                                <children>
+                                                    <Label text="YKS Geri Sayım" styleClass="card-title"/>
+                                                    <StackPane fx:id="countdownRingsHost" styleClass="countdown-rings-host"/>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                        <children>
+                                            <VBox fx:id="dashboardMetricsCard" styleClass="card dashboard-metrics-card" prefWidth="980" maxWidth="980" spacing="0">
+                                                <children>
+                                                    <HBox fx:id="dashboardMetricsRow" spacing="22" alignment="CENTER" fillHeight="true" maxWidth="Infinity" styleClass="dashboard-metrics-row">
+                                                        <children>
+                                                            <VBox fx:id="performanceSummaryColumn" spacing="12" alignment="TOP_LEFT" HBox.hgrow="ALWAYS" minWidth="260" maxWidth="Infinity" styleClass="dashboard-metric-column dashboard-metric-column-left">
+                                                                <children>
+                                                                    <Label text="Performans Özeti" styleClass="card-title dashboard-metric-heading"/>
+                                                                    <VBox spacing="8" alignment="TOP_LEFT" maxWidth="Infinity" styleClass="target-detail-card performance-detail-card">
+                                                                        <children>
+                                                                            <Label fx:id="avg5Label" text="Son 5 Ortalama: -" styleClass="metric-value"/>
+                                                                            <Label text="Güncel ivmeni buradan takip edebilirsin." styleClass="metric-note dashboard-metric-note" wrapText="true" maxWidth="Infinity"/>
+                                                                        </children>
+                                                                    </VBox>
+                                                                </children>
+                                                            </VBox>
+                                                            <Region fx:id="dashboardMetricDivider" minWidth="1" prefWidth="1" maxWidth="1" styleClass="dashboard-metric-divider"/>
+                                                            <VBox fx:id="targetProgressColumn" spacing="10" alignment="TOP_RIGHT" HBox.hgrow="ALWAYS" minWidth="260" maxWidth="Infinity" styleClass="dashboard-metric-column dashboard-metric-column-right">
+                                                                <children>
+                                                                    <Label fx:id="targetProgressHeadingLabel" text="Hedef İlerlemesi" styleClass="card-title dashboard-metric-heading dashboard-metric-subtitle-right" maxWidth="Infinity" textAlignment="RIGHT"/>
+                                                                    <VBox fx:id="targetDetailsCard" spacing="8" alignment="TOP_RIGHT" maxWidth="Infinity" styleClass="target-detail-card">
+                                                                        <children>
+                                                                            <Label fx:id="targetInfoLabel" text="Hedef seçilmedi." styleClass="dashboard-metric-body-title" wrapText="true" textAlignment="RIGHT" maxWidth="Infinity"/>
+                                                                            <Label fx:id="targetRemainingLabel" text="" styleClass="metric-value target-remaining-value" wrapText="true" textAlignment="RIGHT" maxWidth="Infinity"/>
+                                                                            <Label fx:id="targetStatusLabel" text="" styleClass="metric-note dashboard-metric-note" wrapText="true" textAlignment="RIGHT" maxWidth="Infinity"/>
+                                                                        </children>
+                                                                    </VBox>
+                                                                </children>
+                                                            </VBox>
+                                                        </children>
+                                                    </HBox>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    <HBox spacing="14">
+                                        <children>
+                                            <VBox spacing="10" styleClass="card dashboard-feed-card" HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="Son 5 YKS Haberi" styleClass="card-title"/>
+                                                    <VBox fx:id="dashboardNewsContainer" spacing="8"/>
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="10" styleClass="card dashboard-feed-card" HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="En Yakın 3 Türkiye Geneli Deneme" styleClass="card-title"/>
+                                                    <VBox fx:id="dashboardExamsContainer" spacing="8"/>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="examTab" text="Deneme Giriş">
+                            <VBox spacing="14" styleClass="page-wrap content-page">
+                                <children>
+                                    <VBox spacing="12" styleClass="card">
+                                        <children>
+                                            <Label text="Yeni Deneme Kaydı" styleClass="card-title"/>
+                                            <HBox spacing="10">
+                                                <children>
+                                                    <DatePicker fx:id="examDatePicker" promptText="Deneme Tarihi" HBox.hgrow="ALWAYS"/>
+                                                    <ComboBox fx:id="examTypeCombo" promptText="Sınav Türü (TYT/AYT)" HBox.hgrow="ALWAYS"/>
+                                                </children>
+                                            </HBox>
+                                            <Label fx:id="examDateHintLabel" text="Deneme tarihi seçmek zorunludur." styleClass="metric-note"/>
+                                            <VBox fx:id="examLessonsContainer" spacing="8"/>
+                                            <Button text="Deneme Kaydet" onAction="#onSaveExam" styleClass="primary-btn"/>
+                                            <Label fx:id="examStatusLabel" text="" styleClass="status-label"/>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="examListTab" text="Deneme Listesi">
+                            <VBox spacing="14" styleClass="page-wrap content-page">
+                                <children>
+                                    <VBox spacing="10" styleClass="card">
+                                        <children>
+                                            <Label fx:id="examListIntroLabel" text="Kayıtlı denemeler (en yeni üstte)" styleClass="card-title"/>
+                                            <HBox spacing="14" alignment="TOP_LEFT">
+                                                <children>
+                                                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                                                        <children>
+                                                            <Label fx:id="tytExamListTitleLabel" text="TYT Denemeleri" styleClass="card-title"/>
+                                                            <ScrollPane fitToWidth="true" styleClass="cards-scroll" hbarPolicy="NEVER" minHeight="280" VBox.vgrow="ALWAYS">
+                                                                <content>
+                                                                    <VBox fx:id="tytExamsCardsContainer" spacing="10" styleClass="cards-container"/>
+                                                                </content>
+                                                            </ScrollPane>
+                                                        </children>
+                                                    </VBox>
+                                                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                                                        <children>
+                                                            <Label fx:id="aytExamListTitleLabel" text="AYT Denemeleri" styleClass="card-title"/>
+                                                            <ScrollPane fitToWidth="true" styleClass="cards-scroll" hbarPolicy="NEVER" minHeight="280" VBox.vgrow="ALWAYS">
+                                                                <content>
+                                                                    <VBox fx:id="aytExamsCardsContainer" spacing="10" styleClass="cards-container"/>
+                                                                </content>
+                                                            </ScrollPane>
+                                                        </children>
+                                                    </VBox>
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="analysisTab" text="Grafik ve Analiz">
+                            <VBox spacing="14" styleClass="page-wrap content-page">
+                                <children>
+                                    <VBox spacing="10" styleClass="card">
+                                        <children>
+                                            <Label text="TYT Puan Trendi" styleClass="card-title"/>
+                                            <LineChart fx:id="tytScoreLineChart" animated="false" legendVisible="false" minHeight="220">
+                                                <xAxis><CategoryAxis label="Tarih"/></xAxis>
+                                                <yAxis><NumberAxis label="Puan"/></yAxis>
+                                            </LineChart>
+                                        </children>
+                                    </VBox>
+                                    <VBox spacing="10" styleClass="card">
+                                        <children>
+                                            <Label text="AYT Puan Trendi" styleClass="card-title"/>
+                                            <LineChart fx:id="aytScoreLineChart" animated="false" legendVisible="false" minHeight="220">
+                                                <xAxis><CategoryAxis label="Tarih"/></xAxis>
+                                                <yAxis><NumberAxis label="Puan"/></yAxis>
+                                            </LineChart>
+                                        </children>
+                                    </VBox>
+                                    <HBox spacing="12">
+                                        <children>
+                                            <VBox spacing="10" styleClass="card" HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="TYT Ders Net Dağılımı (Ortalama)" styleClass="card-title"/>
+                                                    <BarChart fx:id="tytLessonBarChart" animated="false" legendVisible="false" minHeight="240">
+                                                        <xAxis><CategoryAxis label="Ders"/></xAxis>
+                                                        <yAxis><NumberAxis label="Net"/></yAxis>
+                                                    </BarChart>
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="10" styleClass="card" HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="AYT Ders Net Dağılımı (Ortalama)" styleClass="card-title"/>
+                                                    <BarChart fx:id="aytLessonBarChart" animated="false" legendVisible="false" minHeight="240">
+                                                        <xAxis><CategoryAxis label="Ders"/></xAxis>
+                                                        <yAxis><NumberAxis label="Net"/></yAxis>
+                                                    </BarChart>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="weeklyTab" text="Haftalık Soru Takibi">
+                            <VBox spacing="14" styleClass="page-wrap content-page">
+                                <children>
+                                    <VBox spacing="12" styleClass="card">
+                                        <children>
+                                            <Label text="Ders ve Konu Bazlı Haftalık Takip" styleClass="card-title"/>
+                                            <HBox spacing="10">
+                                                <children>
+                                                    <ComboBox fx:id="weeklyLessonCombo" promptText="Ders Seçimi" HBox.hgrow="ALWAYS"/>
+                                                    <ComboBox fx:id="weeklyTopicCombo" promptText="Konu Seçimi" HBox.hgrow="ALWAYS"/>
+                                                    <TextField fx:id="weeklyCountField" promptText="Soru Sayısı"/>
+                                                    <TextField fx:id="weeklyCorrectField" promptText="Doğru"/>
+                                                    <TextField fx:id="weeklyWrongField" promptText="Yanlış"/>
+                                                    <Button text="Ekle" onAction="#onAddWeeklyQuestion" styleClass="primary-btn"/>
+                                                </children>
+                                            </HBox>
+                                            <ScrollPane fitToWidth="true" styleClass="cards-scroll" hbarPolicy="NEVER" minHeight="300" prefHeight="360" VBox.vgrow="ALWAYS">
+                                                <content>
+                                                    <VBox fx:id="weeklyQuestionCardsContainer" spacing="10" styleClass="cards-container"/>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="goalTab" text="Hedef">
+                            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="cards-scroll">
+                                <content>
+                                    <VBox spacing="14" styleClass="page-wrap content-page goal-scroll-content">
+                                        <children>
+                                            <VBox spacing="12" styleClass="card">
+                                                <children>
+                                                    <Label fx:id="goalAnalysisHeadingLabel" text="Hedef Analizi (YÖK Atlas Referanslı)" styleClass="card-title"/>
+                                                    <Label fx:id="goalInfoLabel" text="Hedef seçilmedi." styleClass="goal-main-title"/>
+                                                    <HBox spacing="12">
+                                                        <children>
+                                                            <VBox spacing="6" styleClass="goal-kpi-card" HBox.hgrow="ALWAYS">
+                                                                <children>
+                                                                    <Label fx:id="goalLastExamScoreHeading" text="Gösterge puan (TYT+AYT+OBP)" styleClass="goal-kpi-label"/>
+                                                                    <Label fx:id="goalLastExamScoreLabel" text="-" styleClass="goal-kpi-value"/>
+                                                                    <Label fx:id="goalLastExamRankHeading" text="Tahmini sıralama (Atlas ref.)" styleClass="goal-kpi-label"/>
+                                                                    <Label fx:id="goalLastExamRankLabel" text="-" styleClass="goal-kpi-value"/>
+                                                                </children>
+                                                            </VBox>
+                                                            <VBox spacing="6" styleClass="goal-kpi-card" HBox.hgrow="ALWAYS">
+                                                                <children>
+                                                                    <Label fx:id="goalTargetScoreHeading" text="Hedef puan (YÖK Atlas)" styleClass="goal-kpi-label"/>
+                                                                    <Label fx:id="goalTargetAverageScoreLabel" text="-" styleClass="goal-kpi-value"/>
+                                                                    <Label fx:id="goalTargetRankHeading" text="Referans yerleşme sırası (örn. son yıllar)" styleClass="goal-kpi-label"/>
+                                                                    <Label fx:id="goalTargetRankingLabel" text="-" styleClass="goal-kpi-value"/>
+                                                                </children>
+                                                            </VBox>
+                                                        </children>
+                                                    </HBox>
+                                                    <Label fx:id="goalPlacementBreakdownLabel" text="" styleClass="metric-note" wrapText="true" visible="false" managed="false"/>
+                                                    <Label fx:id="goalRemainingLabel" text="" styleClass="metric-value" visible="false" managed="false"/>
+                                                    <Label fx:id="goalStatusLabel" text="" styleClass="feedback-label" visible="false" managed="false"/>
+                                                    <VBox fx:id="goalTargetStatsContainer" spacing="10" maxWidth="Infinity" styleClass="target-detail-card"/>
+                                                    <VBox fx:id="goalLessonBreakdownContainer" spacing="6" visible="false" managed="false"/>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </VBox>
+                                </content>
+                            </ScrollPane>
+                        </Tab>
+
+                        <Tab fx:id="calendarTab" text="Takvim">
+                            <VBox spacing="14" styleClass="page-wrap content-page">
+                                <children>
+                                    <VBox spacing="12" styleClass="card">
+                                        <children>
+                                            <Label fx:id="calendarTitleLabel" text="Türkiye Geneli Deneme Takvimi" styleClass="card-title"/>
+                                            <Label fx:id="calendarInfoLabel" text="Takvim verileri internetten otomatik çekilir."/>
+                                            <Button fx:id="refreshCalendarButton" text="Takvimi Yenile" onAction="#onRefreshCalendar" styleClass="primary-btn" maxWidth="180"/>
+                                            <ScrollPane fitToWidth="true" prefHeight="320" styleClass="cards-scroll">
+                                                <content>
+                                                    <VBox fx:id="eventCardsContainer" spacing="10" styleClass="cards-container"/>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="newsTab" text="Haberler">
+                            <VBox spacing="14" styleClass="page-wrap content-page">
+                                <children>
+                                    <VBox spacing="10" styleClass="card">
+                                        <children>
+                                            <Label fx:id="newsTitleLabel" text="Güncel Haber Akışı" styleClass="card-title"/>
+                                            <ScrollPane fitToWidth="true" prefHeight="360" styleClass="cards-scroll">
+                                                <content>
+                                                    <VBox fx:id="newsCardsContainer" spacing="10" styleClass="cards-container"/>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+
+                        <Tab fx:id="settingsTab" text="Ayarlar">
+                            <VBox styleClass="settings-page-outer" alignment="CENTER" VBox.vgrow="ALWAYS">
+                                <children>
+                                    <HBox styleClass="settings-shell" spacing="0" alignment="CENTER" maxWidth="980" maxHeight="620">
+                                        <children>
+                                            <VBox styleClass="settings-nav-pane" spacing="20" prefWidth="248" minWidth="220">
+                                                <children>
+                                                    <VBox spacing="14" alignment="CENTER" styleClass="settings-profile-block">
+                                                        <children>
+                                                            <StackPane styleClass="settings-avatar-wrap">
+                                                                <children>
+                                                                    <Label fx:id="settingsAvatarLabel" text="AA" styleClass="settings-avatar"/>
+                                                                </children>
+                                                            </StackPane>
+                                                            <Label fx:id="settingsUserNameLabel" text="Kullanıcı" styleClass="settings-user-name" wrapText="true" textAlignment="CENTER"/>
+                                                        </children>
+                                                    </VBox>
+                                                    <VBox spacing="4" styleClass="settings-nav-list">
+                                                        <children>
+                                                            <ToggleButton fx:id="settingsNavProfileButton" text="Profil" onAction="#onSettingsShowProfile" styleClass="settings-nav-item" maxWidth="Infinity"/>
+                                                            <ToggleButton fx:id="settingsNavAppearanceButton" text="Görünüm" onAction="#onSettingsShowAppearance" styleClass="settings-nav-item" maxWidth="Infinity"/>
+                                                        </children>
+                                                    </VBox>
+                                                </children>
+                                            </VBox>
+                                            <VBox styleClass="settings-content-pane" spacing="0" HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="settings-content-scroll" VBox.vgrow="ALWAYS">
+                                                        <content>
+                                                            <StackPane>
+                                                                <children>
+                                                                    <VBox fx:id="settingsProfilePane" spacing="28" styleClass="settings-detail-pane">
+                                                                        <children>
+                                                                            <Label fx:id="settingsContentTitleLabel" text="Profil Ayarları" styleClass="settings-content-title"/>
+                                                                            <VBox spacing="18" styleClass="settings-fields-block">
+                                                                                <children>
+                                                                                    <Label fx:id="settingsGroupProfileLabel" text="Profil bilgileri" styleClass="settings-group-title"/>
+                                                                                    <VBox spacing="16" styleClass="settings-field-list">
+                                                                                        <children>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="settingsNameLabel" text="Ad Soyad" styleClass="settings-row-label"/>
+                                                                                                    <TextField fx:id="settingsNameField" styleClass="settings-underline-input" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="settingsUsernameLabel" text="Kullanıcı adı" styleClass="settings-row-label"/>
+                                                                                                    <TextField fx:id="settingsUsernameDisplayField" editable="false" styleClass="settings-underline-input settings-underline-readonly" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="settingsObpLabel" text="OBP" styleClass="settings-row-label"/>
+                                                                                                    <TextField fx:id="settingsObpField" styleClass="settings-underline-input" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                        </children>
+                                                                                    </VBox>
+                                                                                    <Label fx:id="settingsGroupContactLabel" text="İletişim ve hedef" styleClass="settings-group-title"/>
+                                                                                    <VBox spacing="16" styleClass="settings-field-list">
+                                                                                        <children>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="settingsEmailLabel" text="E-posta" styleClass="settings-row-label"/>
+                                                                                                    <TextField fx:id="settingsEmailField" styleClass="settings-underline-input" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="settingsUniversityLabel" text="Hedef üniversite" styleClass="settings-row-label"/>
+                                                                                                    <ComboBox fx:id="settingsUniversityCombo" styleClass="settings-underline-combo" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="settingsDepartmentLabel" text="Hedef bölüm" styleClass="settings-row-label"/>
+                                                                                                    <ComboBox fx:id="settingsDepartmentCombo" styleClass="settings-underline-combo" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                        </children>
+                                                                                    </VBox>
+                                                                                </children>
+                                                                            </VBox>
+                                                                            <VBox spacing="12" alignment="CENTER">
+                                                                                <children>
+                                                                                    <Button fx:id="updateProfileButton" text="Değişiklikleri Kaydet" onAction="#onUpdateProfile" styleClass="settings-save-btn"/>
+                                                                                    <Label fx:id="settingsProfileStatusLabel" text="" styleClass="settings-inline-status" wrapText="true" textAlignment="CENTER"/>
+                                                                                </children>
+                                                                            </VBox>
+                                                                        </children>
+                                                                    </VBox>
+                                                                    <VBox fx:id="settingsAppearancePane" spacing="28" styleClass="settings-detail-pane" visible="false" managed="false">
+                                                                        <children>
+                                                                            <Label fx:id="settingsAppearanceTitleLabel" text="Görünüm Ayarları" styleClass="settings-content-title"/>
+                                                                            <VBox spacing="18" styleClass="settings-fields-block">
+                                                                                <children>
+                                                                                    <Label fx:id="settingsAppearanceGroupLabel" text="Tercihler" styleClass="settings-group-title"/>
+                                                                                    <VBox spacing="16" styleClass="settings-field-list">
+                                                                                        <children>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="themeLabel" text="Tema" styleClass="settings-row-label"/>
+                                                                                                    <ComboBox fx:id="themeCombo" styleClass="settings-underline-combo" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="settings-field-row">
+                                                                                                <children>
+                                                                                                    <Label fx:id="languageLabel" text="Dil" styleClass="settings-row-label"/>
+                                                                                                    <ComboBox fx:id="languageCombo" styleClass="settings-underline-combo" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                                                                                                </children>
+                                                                                            </HBox>
+                                                                                        </children>
+                                                                                    </VBox>
+                                                                                </children>
+                                                                            </VBox>
+                                                                            <VBox spacing="12" alignment="CENTER">
+                                                                                <children>
+                                                                                    <Button fx:id="saveSettingsButton" text="Değişiklikleri Kaydet" onAction="#onSaveSettings" styleClass="settings-save-btn"/>
+                                                                                </children>
+                                                                            </VBox>
+                                                                        </children>
+                                                                    </VBox>
+                                                                </children>
+                                                            </StackPane>
+                                                        </content>
+                                                    </ScrollPane>
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+                        </Tab>
+                    </tabs>
+                                </TabPane>
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+                <VBox fx:id="authContainer" styleClass="auth-screen" alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <children>
+                        <HBox styleClass="auth-split-panel" alignment="CENTER" spacing="0" maxWidth="920" maxHeight="580">
+                            <children>
+                                <VBox styleClass="auth-brand-side" alignment="CENTER" spacing="16" prefWidth="420" minWidth="320" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="AA" styleClass="auth-logo-badge"/>
+                                        <Label fx:id="authTitleLabel" text="Alperen Akademi" styleClass="auth-brand-title"/>
+                                        <Label fx:id="authSubtitleLabel" text="YKS Deneme Performans ve Gelişim Takip Sistemi" styleClass="auth-brand-subtitle" wrapText="true" textAlignment="CENTER"/>
+                                    </children>
+                                </VBox>
+                                <StackPane styleClass="auth-form-side" prefWidth="460" minWidth="360" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <VBox fx:id="loginFormPane" spacing="12" styleClass="auth-form-pane">
+                                            <children>
+                                                <Label fx:id="loginFormHeadingLabel" text="Giriş Yap" styleClass="auth-form-heading"/>
+                                                <VBox spacing="14" styleClass="auth-form-fields" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <TextField fx:id="loginUsernameField" promptText="Kullanıcı adı" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                        <PasswordField fx:id="loginPasswordField" promptText="Şifre" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                        <Label fx:id="loginStatusLabel" text="" styleClass="auth-status-light" wrapText="true"/>
+                                                    </children>
+                                                </VBox>
+                                                <Button fx:id="loginButton" text="Giriş Yap" onAction="#onLogin" styleClass="auth-switch-btn" maxWidth="Infinity"/>
+                                                <Button fx:id="showRegisterButton" text="Hesabınız yok mu? Kayıt olun" onAction="#onShowRegisterForm" styleClass="auth-switch-btn" maxWidth="Infinity"/>
+                                            </children>
+                                        </VBox>
+                                        <VBox fx:id="registerFormPane" spacing="12" styleClass="auth-form-pane" visible="false" managed="false">
+                                            <children>
+                                                <Label fx:id="registerFormHeadingLabel" text="Kayıt Ol" styleClass="auth-form-heading"/>
+                                                <ScrollPane styleClass="auth-scroll" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+                                                    <content>
+                                                        <VBox spacing="12" styleClass="auth-form-fields">
+                                                            <children>
+                                                                <TextField fx:id="registerFullNameField" promptText="Ad Soyad" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <TextField fx:id="registerEmailField" promptText="E-posta" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <TextField fx:id="registerUsernameField" promptText="Kullanıcı adı" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <PasswordField fx:id="registerPasswordField" promptText="Şifre" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <TextField fx:id="registerObpField" promptText="OBP puanı (1-100)" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <Label fx:id="registerObpHintLabel" styleClass="auth-hint-light" wrapText="true" text="OBP zorunludur (1-100 tam sayı)."/>
+                                                                <Label fx:id="registerSectionTargetLabel" text="Hedef (isteğe bağlı)" styleClass="auth-section-title-light"/>
+                                                                <ComboBox fx:id="registerUniversityCombo" promptText="Üniversite seç" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <ComboBox fx:id="registerDepartmentCombo" promptText="Bölüm seç" styleClass="auth-form-input" maxWidth="Infinity"/>
+                                                                <Label fx:id="registerStatusLabel" text="" styleClass="auth-status-light" wrapText="true"/>
+                                                            </children>
+                                                        </VBox>
+                                                    </content>
+                                                </ScrollPane>
+                                                <Button fx:id="registerButton" text="Kayıt Ol" onAction="#onRegister" styleClass="auth-switch-btn" maxWidth="Infinity"/>
+                                                <Button fx:id="showLoginButton" text="Zaten hesabınız var mı? Giriş yapın" onAction="#onShowLoginForm" styleClass="auth-switch-btn" maxWidth="Infinity"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
